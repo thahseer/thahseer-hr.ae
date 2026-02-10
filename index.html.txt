@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thahseer — HR Manager & CEO</title>
+  <meta name="description" content="Thahseer — HR Manager & CEO in the UAE. HR operations, payroll/WPS, compliance, PRO coordination, and HRM/ERP implementation." />
+
+  <!-- Arabic-friendly font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#111827;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --accent:#22c55e;
+      --line:rgba(148,163,184,.22);
+      --blue:rgba(59,130,246,.35);
+      --blueBg:rgba(59,130,246,.10);
+      --green:rgba(34,197,94,.35);
+      --greenBg:rgba(34,197,94,.10);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(34,197,94,.15), transparent 55%),
+                  radial-gradient(900px 600px at 90% 10%, rgba(59,130,246,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width:1020px; margin:0 auto; padding:28px 18px 80px;}
+    .top{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+      margin-top:16px;
+    }
+    @media (max-width: 880px){ .top{grid-template-columns: 1fr;} }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 38%), var(--card);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .hero{ padding:22px; position:relative; overflow:hidden; }
+
+    .langBar{
+      display:flex; gap:8px; justify-content:flex-end; align-items:center;
+      margin: 2px 0 14px;
+    }
+    .langBtn{
+      font-size:13px; font-weight:800;
+      padding:8px 10px; border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      cursor:pointer; color: var(--text);
+    }
+    .langBtnActive{
+      background: rgba(34,197,94,.14);
+      border-color: rgba(34,197,94,.35);
+    }
+
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      color:var(--muted);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:8px 10px;
+      background: rgba(255,255,255,.02);
+    }
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+    h1{margin:12px 0 8px; font-size:34px; letter-spacing:-.02em}
+    .subtitle{color:var(--muted); margin:0 0 14px; font-size:14.5px}
+
+    .ctaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      text-decoration:none;
+      font-weight:800;
+      font-size:14px;
+      white-space:nowrap;
+    }
+    .btnPrimary{
+      background: rgba(34,197,94,.14);
+      border-color: rgba(34,197,94,.35);
+    }
+
+    .mini{ color:var(--muted); font-size:13px; margin-top:10px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+      margin-top:14px;
+    }
+    .span6{grid-column: span 6;}
+    .span12{grid-column: span 12;}
+    @media (max-width: 880px){ .span6{grid-column: span 12;} }
+
+    .sectionTitle{
+      margin:0 0 10px;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+    }
+
+    .pillRow{display:flex; flex-wrap:wrap; gap:8px;}
+    .pill{
+      font-size:13px;
+      color:#dbeafe;
+      border:1px solid var(--blue);
+      background: var(--blueBg);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .pillGreen{
+      color:#dcfce7;
+      border-color: var(--green);
+      background: var(--greenBg);
+    }
+
+    .list{ margin:0; padding-left:18px; color:var(--text); }
+    .list li{ margin:8px 0 }
+
+    .muted{color:var(--muted)}
+    .twoCol{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    @media (max-width: 600px){ .twoCol{grid-template-columns: 1fr;} }
+
+    .footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+    }
+    .hr{height:1px;background:var(--line);border:0;margin:14px 0}
+
+    .kpi{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      margin-top:10px;
+    }
+    @media (max-width: 600px){ .kpi{grid-template-columns: 1fr;} }
+    .k{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px;
+      background: rgba(255,255,255,.02);
+    }
+    .k b{display:block; font-size:18px; margin-bottom:4px}
+    .k span{color:var(--muted); font-size:12px}
+
+    .headRow{display:flex; gap:14px; align-items:center}
+    .avatarImg{
+      width:64px;
+      height:64px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      object-fit:cover;
+      display:block;
+      box-shadow: 0 10px 25px rgba(0,0,0,.35);
+    }
+
+    /* Fade-in animation on scroll */
+    .fade { opacity: 0; transform: translateY(18px); transition: all .8s ease; }
+    .fade.show { opacity: 1; transform: translateY(0); }
+
+    /* WhatsApp floating button */
+    .whatsapp-float{
+      position: fixed;
+      width: 56px;
+      height: 56px;
+      bottom: 18px;
+      right: 18px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 26px;
+      box-shadow: 2px 2px 12px rgba(0,0,0,0.35);
+      z-index: 999;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      transition: transform .25s ease;
+    }
+    .whatsapp-float:hover{ transform: scale(1.08); }
+
+    /* Arabic / RTL support */
+    html[lang="ar"] body{ font-family: "Cairo", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    html[lang="ar"] body{ direction: rtl; }
+    html[lang="ar"] .headRow{ flex-direction: row-reverse; }
+    html[lang="ar"] .langBar{ justify-content:flex-start; }
+    html[lang="ar"] .ctaRow{ justify-content:flex-start; }
+    html[lang="ar"] .list{ padding-left: 0; padding-right: 18px; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="top">
+      <!-- HERO -->
+      <section class="card hero">
+        <div class="langBar" aria-label="Language switch">
+          <button class="langBtn langBtnActive" id="btnEN" type="button">English</button>
+          <button class="langBtn" id="btnAR" type="button">العربية</button>
+        </div>
+
+        <div class="headRow">
+          <!-- Photo file must be in same folder as index.html -->
+          <img class="avatarImg" src="thahseer.jpg" alt="Thahseer profile photo" />
+          <div>
+            <div class="badge"><span class="dot"></span> <span data-i18n="badge">Available for HR consulting & leadership roles</span></div>
+            <h1>Thahseer</h1>
+            <p class="subtitle" data-i18n="subtitle">
+              HR Manager & CEO (UAE) • HR Operations & Compliance • Payroll/WPS Governance • PRO Coordination • HRM/ERP Implementation
+            </p>
+          </div>
+        </div>
+
+        <div class="kpi">
+          <div class="k"><b data-i18n="kpi1t">HR + PRO</b><span data-i18n="kpi1s">End-to-end employee lifecycle</span></div>
+          <div class="k"><b data-i18n="kpi2t">Payroll/WPS</b><span data-i18n="kpi2s">Accuracy, controls, audits</span></div>
+          <div class="k"><b data-i18n="kpi3t">HRM Systems</b><span data-i18n="kpi3s">Rollouts, data consolidation</span></div>
+        </div>
+
+        <p class="mini" data-i18n="heroValue">
+          Outcome focus: stronger compliance, cleaner payroll, faster processing, and scalable HR systems across branches.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="mailto:Thahseer2011@gmail.com" data-i18n="btnEmail">Email</a>
+          <a class="btn" href="http://linkedin.com/in/thahseer-pari-74095a92" target="_blank" rel="noreferrer" data-i18n="btnLinkedIn">LinkedIn</a>
+          <a class="btn" href="tel:+971567611880" data-i18n="btnCall">Call</a>
+          <a class="btn" href="https://wa.me/971567611880" target="_blank" rel="noreferrer" data-i18n="btnWhatsApp">WhatsApp</a>
+          <!-- Upload your CV PDF with this exact name -->
+          <a class="btn" href="Thahseer_CV.pdf" download data-i18n="btnCV">Download CV</a>
+          <a class="btn" href="#projects" data-i18n="btnProjects">Projects</a>
+        </div>
+
+        <p class="mini" data-i18n="heroMini">
+          Location: UAE • Focus: multi-branch operations • Strengths: process optimization, policy compliance, stakeholder management
+        </p>
+      </section>
+
+      <!-- QUICK INFO -->
+      <aside class="card">
+        <p class="sectionTitle" data-i18n="summaryTitle">Profile Summary</p>
+        <p class="muted" style="margin-top:0" data-i18n="summaryText">
+          I lead multi-branch HR operations in the UAE, combining hands-on execution with governance and scale.
+          My work spans UAE labour compliance, payroll/WPS controls, PRO coordination, and HRM/ERP implementation.
+          I build practical SOPs, standardized documentation, and reporting dashboards that improve accuracy, reduce risk,
+          and strengthen operational efficiency across branches.
+        </p>
+
+        <hr class="hr" />
+
+        <p class="sectionTitle" data-i18n="expertiseTitle">Core Expertise</p>
+        <div class="pillRow">
+          <span class="pill pillGreen" data-i18n="pill1">UAE Labour Compliance</span>
+          <span class="pill" data-i18n="pill2">MOHRE / PRO Processes</span>
+          <span class="pill" data-i18n="pill3">Payroll + WPS</span>
+          <span class="pill" data-i18n="pill4">Attendance Controls</span>
+          <span class="pill" data-i18n="pill5">HR Policies & SOPs</span>
+          <span class="pill" data-i18n="pill6">HR Analytics</span>
+          <span class="pill" data-i18n="pill7">Vendor Negotiation</span>
+          <span class="pill" data-i18n="pill8">Branch Consolidation</span>
+        </div>
+
+        <hr class="hr" />
+
+        <p class="sectionTitle" data-i18n="toolsTitle">Tools</p>
+        <ul class="list muted">
+          <li data-i18n="tool1">Excel / Google Sheets (dashboards, trackers, pivot reporting)</li>
+          <li data-i18n="tool2">HRMS/ERP implementations (requirements, rollout, adoption)</li>
+          <li data-i18n="tool3">Documentation systems (handbooks, templates, compliance logs)</li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="grid">
+      <!-- EXPERIENCE -->
+      <section class="card span6">
+        <p class="sectionTitle" data-i18n="expTitle">Experience Highlights</p>
+        <ul class="list">
+          <li data-i18n="exp1"><b>Multi-branch HR operations:</b> managed onboarding, employee records, renewals, and day-to-day HR administration with consistent controls.</li>
+          <li data-i18n="exp2"><b>Payroll & WPS governance:</b> improved payroll accuracy through structured checks, approvals, and consolidated monthly reporting.</li>
+          <li data-i18n="exp3"><b>UAE compliance execution:</b> maintained HR policies and documentation aligned with UAE labour requirements and internal audit readiness.</li>
+          <li data-i18n="exp4"><b>Attendance & workforce controls:</b> mitigated attendance risks via device/process improvements and clear exception handling.</li>
+          <li data-i18n="exp5"><b>Stakeholder coordination:</b> handled vendor and management communication, escalations, and follow-ups to close tasks quickly.</li>
+        </ul>
+      </section>
+
+      <!-- VALUE -->
+      <section class="card span6">
+        <p class="sectionTitle" data-i18n="deliverTitle">What I Deliver</p>
+        <div class="twoCol">
+          <div>
+            <p style="margin:0 0 6px"><b data-i18n="d1t">Operational Control</b></p>
+            <p class="muted" style="margin:0" data-i18n="d1s">SOPs, checklists, reporting cadence, approval flows.</p>
+          </div>
+          <div>
+            <p style="margin:0 0 6px"><b data-i18n="d2t">Compliance Readiness</b></p>
+            <p class="muted" style="margin:0" data-i18n="d2s">Policy updates, document audits, risk mitigation actions.</p>
+          </div>
+          <div>
+            <p style="margin:0 0 6px"><b data-i18n="d3t">Systems Scalability</b></p>
+            <p class="muted" style="margin:0" data-i18n="d3s">HRMS consolidation, branch data governance, adoption support.</p>
+          </div>
+          <div>
+            <p style="margin:0 0 6px"><b data-i18n="d4t">Clear Communication</b></p>
+            <p class="muted" style="margin:0" data-i18n="d4s">Executive-ready summaries, stakeholder updates, employee messaging.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="card span12" id="projects">
+        <p class="sectionTitle" data-i18n="projTitle">Featured Projects</p>
+        <ul class="list">
+          <li data-i18n="p1"><b>HRM System Implementation & Data Consolidation:</b> defined requirements, structured employee master data, and standardized workflows for multi-branch use.</li>
+          <li data-i18n="p2"><b>Attendance Risk Mitigation Program:</b> improved integrity of time records through device controls, monitoring routines, and corrective actions.</li>
+          <li data-i18n="p3"><b>Payroll Optimization & Reporting:</b> created consolidated monthly payroll reports with validation checks and clear approval tracking.</li>
+          <li data-i18n="p4"><b>Policy, SOP & Template Library:</b> built standardized documents (offer letters, NOCs, salary certificates, forms) for faster, consistent processing.</li>
+          <li data-i18n="p5"><b>HR Analytics Dashboards:</b> set up trackers for turnover, statutory costs, and branch-wise workforce reporting to support decisions.</li>
+        </ul>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="card span12" id="contact">
+        <p class="sectionTitle" data-i18n="contactTitle">Contact</p>
+        <p class="muted" style="margin-top:0">
+          <span data-i18n="contactEmailLabel">Email:</span>
+          <a href="mailto:Thahseer2011@gmail.com">Thahseer2011@gmail.com</a>
+          &nbsp;•&nbsp;
+          <span data-i18n="contactPhoneLabel">Phone:</span>
+          <a href="tel:+971567611880">056 761 1880</a>
+          &nbsp;•&nbsp;
+          <span data-i18n="contactLinkedInLabel">LinkedIn:</span>
+          <a href="http://linkedin.com/in/thahseer-pari-74095a92" target="_blank" rel="noreferrer">linkedin.com/in/thahseer-pari-74095a92</a>
+        </p>
+      </section>
+    </div>
+
+    <div class="footer">
+      © <span id="year"></span> Thahseer • <span data-i18n="footer">One-page profile • Hosted on GitHub Pages / Netlify / Vercel</span>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/971567611880" class="whatsapp-float" target="_blank" rel="noreferrer" aria-label="WhatsApp chat">💬</a>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Fade-in cards on scroll
+    const cards = document.querySelectorAll('.card');
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('show');
+        observer.unobserve(e.target);
+      });
+    }, { threshold: 0.15 });
+
+    cards.forEach(c => { c.classList.add('fade'); io.observe(c); });
+
+    // i18n dictionary
+    const I18N = {
+      en: {
+        badge: "Available for HR consulting & leadership roles",
+        subtitle: "HR Manager & CEO (UAE) • HR Operations & Compliance • Payroll/WPS Governance • PRO Coordination • HRM/ERP Implementation",
+        kpi1t: "HR + PRO", kpi1s: "End-to-end employee lifecycle",
+        kpi2t: "Payroll/WPS", kpi2s: "Accuracy, controls, audits",
+        kpi3t: "HRM Systems", kpi3s: "Rollouts, data consolidation",
+        heroValue: "Outcome focus: stronger compliance, cleaner payroll, faster processing, and scalable HR systems across branches.",
+        btnEmail: "Email", btnLinkedIn: "LinkedIn", btnCall: "Call", btnWhatsApp: "WhatsApp", btnCV: "Download CV", btnProjects: "Projects",
+        heroMini: "Location: UAE • Focus: multi-branch operations • Strengths: process optimization, policy compliance, stakeholder management",
+        summaryTitle: "Profile Summary",
+        summaryText: "I lead multi-branch HR operations in the UAE, combining hands-on execution with governance and scale. My work spans UAE labour compliance, payroll/WPS controls, PRO coordination, and HRM/ERP implementation. I build practical SOPs, standardized documentation, and reporting dashboards that improve accuracy, reduce risk, and strengthen operational efficiency across branches.",
+        expertiseTitle: "Core Expertise",
+        pill1: "UAE Labour Compliance", pill2: "MOHRE / PRO Processes", pill3: "Payroll + WPS", pill4: "Attendance Controls",
+        pill5: "HR Policies & SOPs", pill6: "HR Analytics", pill7: "Vendor Negotiation", pill8: "Branch Consolidation",
+        toolsTitle: "Tools",
+        tool1: "Excel / Google Sheets (dashboards, trackers, pivot reporting)",
+        tool2: "HRMS/ERP implementations (requirements, rollout, adoption)",
+        tool3: "Documentation systems (handbooks, templates, compliance logs)",
+        expTitle: "Experience Highlights",
+        exp1: "<b>Multi-branch HR operations:</b> managed onboarding, employee records, renewals, and day-to-day HR administration with consistent controls.",
+        exp2: "<b>Payroll & WPS governance:</b> improved payroll accuracy through structured checks, approvals, and consolidated monthly reporting.",
+        exp3: "<b>UAE compliance execution:</b> maintained HR policies and documentation aligned with UAE labour requirements and internal audit readiness.",
+        exp4: "<b>Attendance & workforce controls:</b> mitigated attendance risks via device/process improvements and clear exception handling.",
+        exp5: "<b>Stakeholder coordination:</b> handled vendor and management communication, escalations, and follow-ups to close tasks quickly.",
+        deliverTitle: "What I Deliver",
+        d1t: "Operational Control", d1s: "SOPs, checklists, reporting cadence, approval flows.",
+        d2t: "Compliance Readiness", d2s: "Policy updates, document audits, risk mitigation actions.",
+        d3t: "Systems Scalability", d3s: "HRMS consolidation, branch data governance, adoption support.",
+        d4t: "Clear Communication", d4s: "Executive-ready summaries, stakeholder updates, employee messaging.",
+        projTitle: "Featured Projects",
+        p1: "<b>HRM System Implementation & Data Consolidation:</b> defined requirements, structured employee master data, and standardized workflows for multi-branch use.",
+        p2: "<b>Attendance Risk Mitigation Program:</b> improved integrity of time records through device controls, monitoring routines, and corrective actions.",
+        p3: "<b>Payroll Optimization & Reporting:</b> created consolidated monthly payroll reports with validation checks and clear approval tracking.",
+        p4: "<b>Policy, SOP & Template Library:</b> built standardized documents (offer letters, NOCs, salary certificates, forms) for faster, consistent processing.",
+        p5: "<b>HR Analytics Dashboards:</b> set up trackers for turnover, statutory costs, and branch-wise workforce reporting to support decisions.",
+        contactTitle: "Contact",
+        contactEmailLabel: "Email:",
+        contactPhoneLabel: "Phone:",
+        contactLinkedInLabel: "LinkedIn:",
+        footer: "One-page profile • Hosted on GitHub Pages / Netlify / Vercel"
+      },
+      ar: {
+        badge: "متاح للاستشارات الإدارية والموارد البشرية والأدوار القيادية",
+        subtitle: "مدير موارد بشرية والرئيس التنفيذي (الإمارات) • عمليات الموارد البشرية والامتثال • حوكمة الرواتب/WPS • تنسيق شؤون الموظفين/PRO • تنفيذ أنظمة HRM/ERP",
+        kpi1t: "الموارد البشرية + PRO", kpi1s: "دورة الموظف من البداية للنهاية",
+        kpi2t: "الرواتب / WPS", kpi2s: "الدقة والضوابط والمراجعات",
+        kpi3t: "أنظمة HRM", kpi3s: "التنفيذ وتوحيد البيانات",
+        heroValue: "التركيز على النتائج: امتثال أقوى، رواتب أدق، إنجاز أسرع، وأنظمة موارد بشرية قابلة للتوسع عبر الفروع.",
+        btnEmail: "البريد", btnLinkedIn: "لينكدإن", btnCall: "اتصال", btnWhatsApp: "واتساب", btnCV: "تحميل السيرة", btnProjects: "المشاريع",
+        heroMini: "الموقع: الإمارات • التركيز: عمليات متعددة الفروع • نقاط القوة: تحسين العمليات، الامتثال، إدارة أصحاب المصلحة",
+        summaryTitle: "نبذة مختصرة",
+        summaryText: "أقود عمليات الموارد البشرية متعددة الفروع في الإمارات، مع الجمع بين التنفيذ العملي والحوكمة والتوسع. يشمل عملي الامتثال لقانون العمل، ضوابط الرواتب/WPS، تنسيق PRO، وتنفيذ أنظمة HRM/ERP. أبني إجراءات تشغيل قياسية (SOP) ونماذج موحدة ولوحات تقارير ترفع الدقة وتقلل المخاطر وتعزز الكفاءة التشغيلية عبر الفروع.",
+        expertiseTitle: "مجالات الخبرة",
+        pill1: "امتثال قانون العمل الإماراتي", pill2: "MOHRE / إجراءات PRO", pill3: "الرواتب + WPS", pill4: "ضوابط الحضور والانصراف",
+        pill5: "سياسات الموارد البشرية وSOP", pill6: "تحليلات الموارد البشرية", pill7: "التفاوض مع الموردين", pill8: "توحيد الفروع",
+        toolsTitle: "الأدوات",
+        tool1: "Excel / Google Sheets (لوحات متابعة، متتبعات، تقارير Pivot)",
+        tool2: "تنفيذ HRMS/ERP (متطلبات، إطلاق، اعتماد المستخدمين)",
+        tool3: "أنظمة التوثيق (أدلة الموظفين، قوالب، سجلات الامتثال)",
+        expTitle: "أبرز الخبرات",
+        exp1: "<b>عمليات موارد بشرية متعددة الفروع:</b> إدارة التعيين، الملفات، التجديدات، وأعمال الموارد البشرية اليومية بضوابط ثابتة.",
+        exp2: "<b>حوكمة الرواتب وWPS:</b> رفع دقة الرواتب عبر تدقيقات وهيكل موافقات وتقارير شهرية موحدة.",
+        exp3: "<b>تنفيذ الامتثال:</b> المحافظة على السياسات والوثائق بما يتوافق مع متطلبات قانون العمل والاستعداد للتدقيق.",
+        exp4: "<b>ضوابط الحضور والقوى العاملة:</b> تقليل مخاطر الحضور عبر تحسين الأجهزة والإجراءات وإدارة الاستثناءات.",
+        exp5: "<b>تنسيق أصحاب المصلحة:</b> إدارة التواصل مع الموردين والإدارة والتصعيدات والمتابعة لإغلاق المهام بسرعة.",
+        deliverTitle: "ما أقدمه",
+        d1t: "ضبط تشغيلي", d1s: "SOP، قوائم تدقيق، دورية تقارير، تدفقات موافقات.",
+        d2t: "جاهزية الامتثال", d2s: "تحديث السياسات، تدقيق الوثائق، تقليل المخاطر.",
+        d3t: "قابلية التوسع", d3s: "توحيد HRMS، حوكمة بيانات الفروع، دعم الاعتماد.",
+        d4t: "تواصل واضح", d4s: "ملخصات تنفيذية، تحديثات أصحاب المصلحة، رسائل الموظفين.",
+        projTitle: "المشاريع المميزة",
+        p1: "<b>تنفيذ نظام HRM وتوحيد البيانات:</b> تحديد المتطلبات، بناء بيانات الموظفين الرئيسية، وتوحيد الإجراءات للفروع.",
+        p2: "<b>برنامج تقليل مخاطر الحضور:</b> رفع موثوقية السجلات عبر ضوابط الأجهزة، المتابعة، والإجراءات التصحيحية.",
+        p3: "<b>تحسين الرواتب والتقارير:</b> إعداد تقارير رواتب شهرية موحدة مع تدقيقات ومتابعة الموافقات.",
+        p4: "<b>مكتبة السياسات وSOP والقوالب:</b> إنشاء نماذج موحدة (عروض، NOC، شهادات راتب، نماذج) لتسريع العمل.",
+        p5: "<b>لوحات تحليلات الموارد البشرية:</b> متتبعات لدوران الموظفين، التكاليف النظامية، وتقارير القوى العاملة حسب الفرع.",
+        contactTitle: "التواصل",
+        contactEmailLabel: "البريد:",
+        contactPhoneLabel: "الهاتف:",
+        contactLinkedInLabel: "لينكدإن:",
+        footer: "صفحة تعريفية واحدة • استضافة عبر GitHub Pages / Netlify / Vercel"
+      }
+    };
+
+    function setLang(lang){
+      const isAr = (lang === "ar");
+      document.documentElement.lang = lang;
+      document.documentElement.dir = isAr ? "rtl" : "ltr";
+
+      // toggle button styles
+      document.getElementById("btnEN").classList.toggle("langBtnActive", !isAr);
+      document.getElementById("btnAR").classList.toggle("langBtnActive", isAr);
+
+      // apply translations
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        const val = I18N[lang][key];
+        if (!val) return;
+
+        // Some entries contain <b>…</b>
+        if (val.includes("<b>")) el.innerHTML = val;
+        else el.textContent = val;
+      });
+
+      // store preference
+      try { localStorage.setItem("lang", lang); } catch(e){}
+    }
+
+    document.getElementById("btnEN").addEventListener("click", () => setLang("en"));
+    document.getElementById("btnAR").addEventListener("click", () => setLang("ar"));
+
+    // default language: saved preference, otherwise English
+    let saved = "en";
+    try { saved = localStorage.getItem("lang") || "en"; } catch(e){}
+    setLang(saved);
+  </script>
+</body>
+</html>
